@@ -1,0 +1,75 @@
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 0.6);
+  border-radius: 0.3rem;
+  padding: 6rem;
+  //increased padding-left to 9
+  padding-left: 9rem;
+  font-size: $default-font-size;
+  transform: skew(-12deg);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    // background-color: orangered;
+    float: left;
+    overflow: hidden;
+
+    //new css property needs to be floated & have width & height to work.
+    //defines where the content flows around the element.
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+
+    //This rounds the circle.
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+
+    //Creates space between the circle and the text
+    transform: translateX(-3rem) skew(12deg);
+    position: relative;
+  }
+
+  &__img {
+    transform: translateX(-4rem) scale(1.4);
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 0.3s;
+  }
+
+  &__text {
+    transform: skew(12deg);
+  }
+
+  &__caption {
+    position: absolute;
+
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+
+    //positions name center of circle
+    top: 50%;
+    left: 50%;
+    transform: translate(
+      -50%,
+      20%
+    ); //the 20% positions the name lower so it can bounce up on hover
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  &:hover &__caption {
+    //makes the caption visible
+    opacity: 1;
+    //centers the caption text
+    transform: translate(-50%, -50%);
+    //prevents standard end of effect bounce on element movement
+    backface-visibility: hidden;
+  }
+  &:hover &__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(0.3rem) brightness(80%);
+  }
+}
