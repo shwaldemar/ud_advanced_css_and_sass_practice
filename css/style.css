@@ -46,6 +46,17 @@
   .row .col-3-of-4 {
     width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
+.footer {
+  background-color: #333;
+  padding: 10rem 0;
+  font-size: 1.4rem; }
+  .footer__logo-box {
+    text-align: center; }
+  .footer__logo {
+    width: 50rem; }
+  .footer__list {
+    list-style: none; }
+
 .btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
