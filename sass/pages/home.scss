@@ -57,9 +57,14 @@
     ),
     url(../img/nat-10.jpg);
 
-  background-size: 100%;
+  background-size: fill;
   border-radius: 0.3rem;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
 
   height: 50rem;
+
+  &__form {
+    width: 50%;
+    padding: 6rem;
+  }
 }
