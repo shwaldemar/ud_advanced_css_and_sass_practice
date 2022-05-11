@@ -8,7 +8,28 @@
 
 html {
   //This defines what 1 rem as 10px.
-  font-size: 62.5%;
+  font-size: 62.5%; // 1 rem == 10px
+
+  //Media queries
+  //N.B. Larger media queries before smaller screen sizes.
+
+  //1rem 9px == (9 / 16) == 0.5625/56.25%
+  //width < 1200?
+  @include respond(tab-land) {
+    font-size: 56.25%;
+  }
+
+  //1rem 8px == (8 / 16) == 0.5/50%
+  //width < 900?
+  @include respond(tab-port) {
+    font-size: 50%;
+  }
+
+  //1rem 12px == (12 / 16) == 0.75/75%
+  //width > 1800?
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 
 body {
