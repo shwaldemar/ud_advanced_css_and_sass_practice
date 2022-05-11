@@ -15,6 +15,25 @@ html {
 
   //1rem 9px == (9 / 16) == 0.5625/56.25%
   //width < 1200?
+
+  //Media queries for chrome browser testing
+  @media (min-width: 30em) and (max-width: 37.5em) {
+    padding: 0;
+  }
+
+  @media (min-width: 37.5em) and (max-width: 56.25em) {
+    padding: 0;
+  }
+
+  @media (min-width: 56.25em) and (max-width: 75em) {
+    padding: 0;
+  }
+
+  @media (min-width: 75em) and (max-width: 112.5em) {
+    padding: 0;
+  }
+  //Media queries for chrome browser testing
+
   @include respond(tab-land) {
     font-size: 56.25%;
   }
@@ -34,4 +53,11 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  //1rem 8px == (8 / 16) == 0.5/50%
+  //width < 900?
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
