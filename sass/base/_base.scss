@@ -32,6 +32,10 @@ html {
     font-size: 50%;
   }
 
+  @media (max-width: 900) {
+    font-size: 50%;
+  }
+
   //600px / 16px = 37.5em
   // @include respond(phone) {
   //   font-size: 50%;

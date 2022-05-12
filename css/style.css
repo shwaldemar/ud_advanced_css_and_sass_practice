@@ -761,6 +761,9 @@ html {
 @media (max-width: tab-port) and (max-width: 56.25em) {
   html {
     font-size: 50%; } }
+  @media (max-width: 900) {
+    html {
+      font-size: 50%; } }
 
 @media (max-width: big-desktop) and (min-width: 112.5em) {
   html {
