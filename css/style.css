@@ -753,21 +753,15 @@ html {
   - tab-land: 1200 / 16 = 75em
   - big-desktop: 1800 / 16 = 112.5em
   */ }
-
-@media (max-width: tab-land) and (max-width: 75em) {
-  html {
-    font-size: 56.25%; } }
-
-@media (max-width: tab-port) and (max-width: 56.25em) {
-  html {
-    font-size: 50%; } }
-  @media (max-width: 900) {
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-
-@media (max-width: big-desktop) and (min-width: 112.5em) {
-  html {
-    font-size: 75%; } }
+  @media only screen and (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box;
