@@ -10,25 +10,33 @@
   font-size: $default-font-size;
   transform: skew(-12deg);
 
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skew(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
-    // background-color: orangered;
+
     float: left;
     overflow: hidden;
-
-    //new css property needs to be floated & have width & height to work.
-    //defines where the content flows around the element.
     shape-outside: circle(50% at 50% 50%);
     -webkit-shape-outside: circle(50% at 50% 50%);
-
-    //This rounds the circle.
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
 
-    //Creates space between the circle and the text
-    transform: translateX(-3rem) skew(12deg);
+    transform: translateX(-3rem) skewX(12deg);
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -40,6 +48,10 @@
 
   &__text {
     transform: skew(12deg);
+
+    @include respond(phone) {
+      transform: skew(0);
+    }
   }
 
   &__caption {
