@@ -1,3 +1,25 @@
+/*
+MEDIA QUERY MANAGER
+ORDER OF MEDIA QUERY IMPLEMENTATION: Base & Typography > layout & grid > page layout > components.
+
+N.B. max-width Larger media queries before smaller screen sizes. min-width Smaller media queries before larger screen sizes.
+
+0 - 600px:     phone - max-width media query
+600 - 900px:   tablet portrait - max-width media query
+900 - 1200px:  tablet landscape - max-width media query
+1200 - 1800px: desktop (Normal styles apply)
+> 1800px:      big desktop min-width media query
+
+$breakpoint argument choices
+Have to use ems as rems do not work here. ems are based on browser font-size 16px.
+Using ems for font-size. Basic browser font-size of 16px. 
+Divide width px by 16 to get em value. 
+
+- phone: 600 / 16 = 37.5em
+- tab-port: 900 / 16 = 56.25em
+- tab-land: 1200 / 16 = 75em
+- big-desktop: 1800 / 16 = 112.5em
+*/
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
@@ -21,7 +43,11 @@
     /* background-color: red; */ }
 
 /*
-MEDIA QUERIES
+MEDIA QUERY MANAGER
+ORDER OF MEDIA QUERY IMPLEMENTATION: Base & Typography > layout & grid > page layout > components.
+
+N.B. max-width Larger media queries before smaller screen sizes. min-width Smaller media queries before larger screen sizes.
+
 0 - 600px:     phone - max-width media query
 600 - 900px:   tablet portrait - max-width media query
 900 - 1200px:  tablet landscape - max-width media query
@@ -36,9 +62,7 @@ Divide width px by 16 to get em value.
 - phone: 600 / 16 = 37.5em
 - tab-port: 900 / 16 = 56.25em
 - tab-land: 1200 / 16 = 75em
-- big-desktop: 1800 / 16 = 1112.5em
-
-ORDER: Base & Typography > layout & grid > page layout > components
+- big-desktop: 1800 / 16 = 112.5em
 */
 .row {
   max-width: 114rem;
@@ -680,26 +704,6 @@ ORDER: Base & Typography > layout & grid > page layout > components
     width: 50%;
     padding: 6rem; }
 
-/*
-MEDIA QUERIES
-0 - 600px:     phone - max-width media query
-600 - 900px:   tablet portrait - max-width media query
-900 - 1200px:  tablet landscape - max-width media query
-1200 - 1800px: desktop (Normal styles apply)
-> 1800px:      big desktop min-width media query
-
-$breakpoint argument choices
-Have to use ems as rems do not work here. ems are based on browser font-size 16px.
-Using ems for font-size. Basic browser font-size of 16px. 
-Divide width px by 16 to get em value. 
-
-- phone: 600 / 16 = 37.5em
-- tab-port: 900 / 16 = 56.25em
-- tab-land: 1200 / 16 = 75em
-- big-desktop: 1800 / 16 = 1112.5em
-
-ORDER: Base & Typography > layout & grid > page layout > components
-*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -742,25 +746,23 @@ ORDER: Base & Typography > layout & grid > page layout > components
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
-  @media (min-width: 30em) and (max-width: 37.5em) {
-    html {
-      padding: 0; } }
-  @media (min-width: 37.5em) and (max-width: 56.25em) {
-    html {
-      padding: 0; } }
-  @media (min-width: 56.25em) and (max-width: 75em) {
-    html {
-      padding: 0; } }
-  @media (min-width: 75em) and (max-width: 112.5em) {
-    html {
-      padding: 0; } }
+  font-size: 62.5%;
+  /*
+  - phone: 600 / 16 = 37.5em
+  - tab-port: 900 / 16 = 56.25em
+  - tab-land: 1200 / 16 = 75em
+  - big-desktop: 1800 / 16 = 112.5em
+  */ }
 
 @media (max-width: tab-land) and (max-width: 75em) {
   html {
     font-size: 56.25%; } }
 
 @media (max-width: tab-port) and (max-width: 56.25em) {
+  html {
+    font-size: 50%; } }
+
+@media (max-width: phone) and (max-width: 37.5em) {
   html {
     font-size: 50%; } }
 
@@ -771,10 +773,6 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem; }
-
-@media (max-width: tab-port) and (max-width: 56.25em) {
-  body {
-    padding: 0; } }
 
 body {
   font-family: 'Lato', sans-serif;
