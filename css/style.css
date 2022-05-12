@@ -17,7 +17,7 @@ Divide width px by 16 to get em value.
 
 - phone: 600 / 16 = 37.5em
 - tab-port: 900 / 16 = 56.25em
-- tab-land: 1200 / 16 = 75em
+- tab-land: 1
 - big-desktop: 1800 / 16 = 112.5em
 */
 .header {
@@ -61,7 +61,7 @@ Divide width px by 16 to get em value.
 
 - phone: 600 / 16 = 37.5em
 - tab-port: 900 / 16 = 56.25em
-- tab-land: 1200 / 16 = 75em
+- tab-land: 1
 - big-desktop: 1800 / 16 = 112.5em
 */
 .row {
@@ -753,13 +753,13 @@ html {
   - tab-land: 1200 / 16 = 75em
   - big-desktop: 1800 / 16 = 112.5em
   */ }
-  @media only screen and (max-width: 75em) {
+  @media (max-width: 75em) {
     html {
       font-size: 56.25%; } }
-  @media only screen and (max-width: 56.25em) {
+  @media (max-width: 56.25em) {
     html {
       font-size: 50%; } }
-  @media only screen and (min-width: 112.5em) {
+  @media (min-width: 112.5em) {
     html {
       font-size: 75%; } }
 
