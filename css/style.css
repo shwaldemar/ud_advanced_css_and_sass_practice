@@ -769,6 +769,9 @@ html {
 body {
   box-sizing: border-box;
   padding: 3rem; }
+  @media (max-width: 900px) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: 'Lato', sans-serif;
