@@ -17,6 +17,15 @@
 
     text-align: center;
     cursor: pointer;
+
+    @include respond(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+    @include respond(tab-port) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -33,6 +42,15 @@
     top: 6.5rem;
     right: 6.5rem;
     z-index: 10;
+
+    @include respond(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+    @include respond(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
 
     transition: transform 0.8s cubic-bezier(0.83, 0, 0.17, 1);
   }

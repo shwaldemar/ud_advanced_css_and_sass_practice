@@ -24,6 +24,21 @@
   ); //new css property enables shaping background image.
   position: relative;
 
+  @include respond(phone) {
+    -webkit-clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 85vh,
+      0 100%
+    ); //makes a polygon from image accorss all browsers using webkit
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 85vh,
+      0 100%
+    ); //new css property enables shaping background image.
+  }
+
   &__logo-box {
     position: absolute;
     top: 4rem;
