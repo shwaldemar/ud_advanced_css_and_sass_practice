@@ -200,7 +200,7 @@
   }
   //////MEDIA QUERIES BELOW
 
-  @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     border-radius: 0.3rem;
     background: $color-white;
