@@ -13,6 +13,7 @@
     top: 0;
     left: 0;
     width: 100%; //added to give width to the sides which are position absolute which collapses width.
+    --webkit-backface-visibility: hidden; //stops the backface being visible through the front face.
     backface-visibility: hidden; //stops the backface being visible through the front face.
     border-radius: 0.3rem;
     overflow: hidden; //this hides overflow and makes the corners of the images round again.
